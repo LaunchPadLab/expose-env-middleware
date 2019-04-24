@@ -1,0 +1,29 @@
+{
+  "name": "expose-env-middleware",
+  "version": "1.0.0",
+  "description": "Expose env variables to client-side code via express",
+  "main": "middleware.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaunchpadLab/expose-env-middleware.git"
+  },
+  "author": "dpikt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LaunchpadLab/expose-env-middleware/issues"
+  },
+  "homepage": "https://github.com/LaunchpadLab/expose-env-middleware#readme",
+  "devDependencies": {
+    "@launchpadlab/eslint-config": "^2.5.0",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "jest": "^24.7.1",
+    "supertest": "^4.0.2"
+  },
+  "peerDependencies": {
+    "express": "^4.0.0"
+  }
+}

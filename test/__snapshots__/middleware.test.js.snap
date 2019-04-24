@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`middleware accepts custom template argument 1`] = `"ur env is {\\"foo\\":\\"bar\\"}"`;
+
+exports[`middleware exposes a stringified environment 1`] = `
+"
+    window.process = {
+      env: {\\"foo\\":\\"bar\\"}
+    }  
+  "
+`;
