@@ -1,5 +1,3 @@
-const { Router } = require('express')
-
 function defaultTemplate (env) {
   return `
     window.process = {
@@ -8,11 +6,11 @@ function defaultTemplate (env) {
   `
 }
 
-function exposeEnvMiddleware (getEnv, { filename='env.js', template=defaultTemplate }={}) {
+function exposeEnvMiddleware (getEnv, { template=defaultTemplate }={}) {
   if (!getEnv || typeof getEnv !== 'function') throw new Error('Must provide getEnv() function')
-  const app = Router()
-  app.get('/' + filename, (req, res) => res.send(template(getEnv())))
-  return app
+  return function (req, res) {
+    return res.send(template(getEnv()))
+  }
 }
 
 module.exports = exposeEnvMiddleware

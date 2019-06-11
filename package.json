@@ -1,6 +1,6 @@
 {
   "name": "expose-env-middleware",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Expose env variables to client-side code via express",
   "main": "middleware.js",
   "scripts": {
