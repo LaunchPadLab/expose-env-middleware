@@ -10,13 +10,13 @@ const exposeEnvMiddleware = require('expose-env-middleware')
 
 // Pass it a function that returns env vars
 const getEnv = () => ({ FOO: 'bar' })
-app.use(exposeEnvMiddleware(getEnv))
+app.get('/env', exposeEnvMiddleware(getEnv))
 app.listen(...)
 ```
 ```html
 <!-- index.html -->
 
-<script src="/env.js"></script>
+<script src="/env"></script>
 <script> console.log(process.env.FOO) // -> 'bar' </script>
 ```
 
@@ -26,7 +26,6 @@ This setup allows env vars to reload each time index.html is fetched.
 
 * `middleware(getEnv[, options])`
   * `getEnv`: A function that returns an object of env variables.
-  * `options.filename` (optional, default=`'env.js'`) Filename where env will be exposed.
   * `options.template` (optional, default=`defaultTemplate`) Template function for serializing the env object into a file. Default is shown below:
 
 
